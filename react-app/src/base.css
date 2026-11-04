@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* =========================================
+   VARIABLES GLOBALES Y RESET
+   ========================================= */
+:root {
+    --primary-blue: #4b3bff;
+    --bg-light: #f4f5f7;
+    --card-grey: #d1d1d6;
+    --text-main: #111111;
+    --text-muted: #888888;
+    --white: #ffffff;
+    --red: #e61e25;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Contenedor principal (pantalla completa) */
+.app-window {
+    background-color: var(--bg-light);
+    width: 100%;
+    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+    flex-direction: column;
+    position: relative;
+}
+
+
+.app-window, .top-header, .main-content, .blue-banner, .cards-grid, .card-option, .card-option2, .page-footer {
+    display: flex;
+}
+
+a { text-decoration: none; }
+
+/* =========================================
+   BOTÓN DEL LOGO
+   ========================================= */
+.logo-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--red);
+    padding: 6px 20px;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+.logo-btn:hover { transform: translateY(-2px); }
+.logo-img { height: 22px; width: auto; object-fit: contain; display: block; }
+
+/* =========================================
+   RECUADRO 1: INICIO
+   ========================================= */
+.top-header {
+    background: linear-gradient(to bottom, #e6e6e6, #d4d4d4);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex-shrink: 0; /* Evita que la cabecera se encoja */
+}
+.top-header nav { display: flex; gap: 15px; }
+.top-header nav a {
+    color: var(--text-main);
+    background-color: var(--white);
+    padding: 8px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.top-header nav a.active { background-color: var(--primary-blue); color: var(--white); }
+
+.main-content { 
+    padding: 40px; 
+    flex: 1; /* Ocupa el espacio sobrante y empuja el footer hacia abajo */
+    flex-direction: column; 
+    align-items: center; 
+}
+.blue-banner {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 20px 30px;
+    border-radius: 15px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 10px rgba(75, 59, 255, 0.3);
+}
+.blue-banner h1 { font-size: 22px; font-weight: 600; }
+.blue-banner svg { width: 40px; height: 40px; fill: none; stroke: white; stroke-width: 2; }
+
+.cards-grid { display: flex; gap: 30px; width: 100%; justify-content: center; }
+.card-option {
+    background-color: var(--card-grey);
+    padding: 25px;
+    border-radius: 15px;
+    flex: 1;
+    max-width: 250px;
+    flex-direction: column;
+    gap: 20px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+.card-option2 {
+
+    color: #111;
+    padding: 15px;
+    border-radius: 10px;
+    flex: 1;
+    max-width: 225px;
+    flex-direction: column;
+    gap: 15px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    text-decoration: none;
+}
+.card-option:hover { background-color: #b0b0b5; transform: translateY(-3px); }
+.card-option svg { width: 35px; height: 35px; fill: #111; }
+.card-option h3 { font-size: 16px; font-weight: 600; }
+
+
+
+ /*=========================================
+   CABECERA Y FOOTER GENERAL (Mis Documentos)
+   ========================================= */
+
+.content-padding { padding: 40px; flex: 1; }
+.section-title { font-size: 26px; font-weight: 700; margin-bottom: 5px; }
+.subtitle { color: var(--primary-blue); font-size: 14px; font-weight: 600; }
+.doc-list { margin-top: 30px; flex-direction: column; gap: 15px; max-width: 600px; }
+.doc-item { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.doc-placeholder { background-color: var(--card-grey); height: 45px; border-radius: 10px; flex: 1; }
+.doc-status { font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 8px; min-width: 120px; }
+
+/* Footer con botones */
+
+.page-footer { 
+    padding: 20px 40px; 
+    justify-content: flex-end; 
+    gap: 15px; 
+    margin-top: auto; 
+    width: 100%;
+    flex-shrink: 0;
+}
+.footer-btn {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-main);
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.footer-btn:hover { background-color: #b0b0b5; }
